@@ -1,7 +1,7 @@
 # ✨ PABLO BEJARANO | VIYELITH ✨
 
 <div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzk2OTI5OTZlNzMxODhjZDYzOGJkMGEzM2NhMDNlYWU0YzgyZmE2YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/l0Iyk1ANOZub2wXF6/giphy.gif" width="150" />
+  <img src="https://github.com/user-attachments/assets/56b1fe8c-2e7b-4234-a494-66daa1016836" width="150" />
   
   <h3>Desarrollador de Software | Explorador del Universo Tecnológico</h3>
   
@@ -102,7 +102,7 @@ Desarrollada con React Native, React Navigation, React Native Paper y Firebase.
 </div>
 
 <div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDMzYWI3ZDYwYTlmYmVlMTliNzRiZjkyZGU3YjBmZWQ4YTI3MGFlOCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/tBDNYgDVS87qE/giphy.gif" width="100" />
+  <img src="https://github.com/user-attachments/assets/56b1fe8c-2e7b-4234-a494-66daa1016836" width="100" />
 </div>
 
 ---
