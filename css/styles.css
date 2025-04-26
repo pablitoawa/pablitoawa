@@ -559,6 +559,7 @@ section {
     flex: 0 0 300px;
     height: 450px;
     perspective: 1000px;
+    position: relative;
 }
 
 .card-front,
@@ -569,6 +570,8 @@ section {
     border-radius: var(--radius-md);
     backface-visibility: hidden;
     transition: transform var(--transition-slow);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .card-front {
@@ -579,12 +582,44 @@ section {
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--accent);
+    overflow: hidden;
 }
 
 .card-back {
     background: var(--card);
     transform: rotateY(180deg);
     padding: 20px;
+}
+
+.card-back h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.card-back p, .card-back ul {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-back ul {
+    padding-left: 20px;
+    margin-left: 0;
+}
+
+.card-back li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+.card-back li:before {
+    content: '✧';
+    position: absolute;
+    left: -18px;
+    color: var(--accent);
 }
 
 .zodiac-card:hover .card-front {
@@ -1289,6 +1324,13 @@ footer p {
     .edu-card {
         flex: 0 0 100%;
     }
+    
+    .zodiac-card {
+        margin-bottom: 40px;
+        width: 90%;
+        max-width: 350px;
+        height: 400px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1351,6 +1393,33 @@ footer p {
     .edu-card {
         padding: 20px;
     }
+    
+    .zodiac-card {
+        height: 350px;
+    }
+    
+    .card-back h3 {
+        font-size: 1.3rem;
+    }
+    
+    .card-back p, .card-back ul {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .zodiac-card:after {
+        content: 'Toca para girar';
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(138, 79, 255, 0.8);
+        color: white;
+        padding: 5px 10px;
+        border-radius: var(--radius-sm);
+        font-size: 0.7rem;
+        pointer-events: none;
+        z-index: 10;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1374,6 +1443,26 @@ footer p {
     
     .edu-icon {
         margin-bottom: 15px;
+    }
+    
+    .zodiac-card {
+        height: 320px;
+        width: 100%;
+    }
+    
+    .card-back {
+        padding: 20px;
+    }
+    
+    .card-back h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-back p, .card-back ul {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
     }
 }
 

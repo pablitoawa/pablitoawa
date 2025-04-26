@@ -64,24 +64,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Destacar el enlace de navegación activo basado en la sección visible
+    let scrollTimeout;
     window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop - header.clientHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active');
-            }
-        });
+        // Evita múltiples cálculos durante el desplazamiento
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(() => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.pageYOffset >= sectionTop - header.clientHeight - 50) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                scrollTimeout = null;
+            }, 100); // Reducir la frecuencia de cálculos
+        }
     });
     
     // Procesar el formulario de contacto
